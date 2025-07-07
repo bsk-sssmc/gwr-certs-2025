@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certificate Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <img src="banner.png" alt="Sai Gayatri Banner" id="banner">
+  </header>
+
+  <main>
+    <h1>Download Your Certificate</h1>
+
+    <div id="emailForm">
+      <label for="email">Your Email</label>
+      <input id="email" type="email" required autocomplete="email" />
+      <button id="validateBtn" type="button">Validate Email</button>
+      <div id="emailMsg" class="msg"></div>
+    </div>
+
+    <section id="done" hidden>
+      <div id="thankYouMsg" class="msg"></div>
+      <canvas id="certificateCanvas"></canvas>
+      <div class="download-options">
+        <button id="downloadBtn">Download Certificate</button>
+      </div>
+      <a id="reset" class="link">↩︎ Enter another email</a>
+    </section>
+  </main>
+
+  <div id="downloadOverlay" class="hidden">
+    <div class="overlay-content">
+      <p>⏳ Preparing your certificate PDF… please wait.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.skypack.dev/jspdf"></script>
+  <script src="app.js"></script>
+</body>
+</html>
