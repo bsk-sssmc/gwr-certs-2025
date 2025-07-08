@@ -29,14 +29,6 @@ function startOver() {
 
 qs("#reset").onclick = startOver;
 
-function showOverlay() {
-  qs("#downloadOverlay").classList.remove("hidden");
-}
-
-function hideOverlay() {
-  qs("#downloadOverlay").classList.add("hidden");
-}
-
 // Handle Enter key on email input
 qs("#email").addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
@@ -150,8 +142,6 @@ async function generateCertificate(name, certId, templateURL) {
 }
 
 async function downloadCertificate() {
-  showOverlay();
-
   const pdf = new jsPDF({
     orientation: "landscape",
     unit: "px",
@@ -161,8 +151,6 @@ async function downloadCertificate() {
   const imgData = canvas.toDataURL("image/jpeg", 0.9);
   pdf.addImage(imgData, "JPEG", 0, 0, TEMPLATE_WIDTH, TEMPLATE_HEIGHT);
   pdf.save(`certificate.pdf`);
-
-  hideOverlay();
 }
 
 qs("#downloadBtn").addEventListener("click", () => downloadCertificate());
