@@ -1,5 +1,5 @@
 // Use globally loaded jsPDF instead of importing
-const { jsPDF } = window;
+const { jsPDF } = window.jspdf;
 
 const API_VALIDATE = "api/validate-email";
 const qs = (sel) => document.querySelector(sel);
@@ -142,6 +142,7 @@ async function generateCertificate(name, certId, templateURL) {
 }
 
 async function downloadCertificate() {
+  console.log("🔥 Download button clicked — generating PDF");
   const pdf = new jsPDF({
     orientation: "landscape",
     unit: "px",
@@ -149,8 +150,11 @@ async function downloadCertificate() {
   });
 
   const imgData = canvas.toDataURL("image/jpeg", 0.9);
+  console.log("🔥 Got canvas data URL");
   pdf.addImage(imgData, "JPEG", 0, 0, TEMPLATE_WIDTH, TEMPLATE_HEIGHT);
   pdf.save(`certificate.pdf`);
+  console.log("🔥 PDF save triggered");
 }
+
 
 qs("#downloadBtn").addEventListener("click", () => downloadCertificate());

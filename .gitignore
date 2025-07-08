@@ -1,0 +1,58 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment files
+.env
+.env.*.local
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Vercel & Next.js build output (if you ever switch to Next)
+.vercel/
+.next/
+
+# Local build output
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+
+# IDE folders
+.vscode/
+.idea/
+
+# OS metadata
+*.sublime-workspace
+*.sublime-project
+
+# Optional: any editor backup files
+*~
+
+# Optional: log output
+*.out
+*.pid
+*.seed
+
+# Optional: compiled output (if you ever transpile)
+lib/
+out/
+coverage/
+
+# Optional: npm package lock
+package-lock.json
+
+# Optional: yarn lock (if you ever use Yarn)
+yarn.lock
